@@ -12,6 +12,7 @@ though, is inherently coupled with the complex problem of orbit determination.
 
 Orbit determination offers unprecedented insight in the field of geodesy. Its 
 contribution can be broadly grouped in a twofold role:
+
   1. As a product (i.e. tabulated satellite coordinates and/or velocity) it is 
   needed for most spaced-based applications. Knowledge of satellite position 
   (or state) is a prerequisite for most applications and in general dictates 
@@ -48,15 +49,22 @@ determination and positioning using the Doppler Orbitography and
 Radiopositioning Integrated by Satellite (DORIS) satellite system.
 
 Within the framework of the project, three satellites will be targeted, namely 
- * the Joint Altimetry Satellite Oceanography Network–3 (Jason-3),
- * the Sentinel-3A and
- * the Hai Yang 2C (HY-2C)
+
+  * the Joint Altimetry Satellite Oceanography Network–3 (Jason-3),
+
+  * the Sentinel-3A and
+
+  * the Hai Yang 2C (HY-2C)
+
 satellites.
 
 Via the resulting software, NTUA will be able to provide:
+
   * Precise orbit products for the selected satellite missions,
+
   * High quality position estimates for the DORIS-system ground segment 
     (beacons)
+
   * Estimates for a number of parameters of geodetic and/or atmospheric 
     interest
 
