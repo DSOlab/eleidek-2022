@@ -35,7 +35,7 @@ requested period of 24 months. The research team has an extensive, solid
 background and expertise on space geodesy and especially the analysis of 
 satellite-based observations. It possesses knowledge of state-of-the-art 
 methodologies on data processing and is actively involved in applications of 
-space-geodetic techniques demanding the outmost precision.
+space-geodetic techniques demanding the utmost precision.
 
 1.2 Relevance with the selected Scientific Area
 ===============================================
@@ -101,24 +101,57 @@ protection and marine scientific research [3], [4].
 =====
 
 The objectives of the targeted satellite missions can only be achieved in the 
-precense of high quality space vehicle orbits. Measurements performed by their 
+presence of high quality space vehicle orbits. Measurements performed by their 
 onboard instruments can only be used in high precision applications, if the 
-satellite's position is known to a required accuracy. Hence, the neccesity of 
+satellite's position is known to a required accuracy. Hence, the necessity of 
 precise orbit determination is profound, inherent to the mission's success.
 
 Among other instruments, the payload of the satellites includes DORIS 
 receivers to enable precise orbit determination. However, only a few Analysis 
-Centers worldwide can process observations of this system. Acoording to the 
+Centers worldwide can process observations of this system. According to the 
 International DORIS Service (IDS), the last contribution of the Service to the 
-latest International Terrestrial Refernce Frame (ITRF2020, [5]) included 
+latest International Terrestrial Reference Frame (ITRF2020, [5]) included 
 analysis results from no more than four Analysis Centers ([6]), each one using 
 their own, in-house software package.
 
-This scarcity of both Analysis Centers and respective software (In comparisson, 
+This scarcity of both Analysis Centers and respective software (In comparison, 
 for the other two prominent space-based orbit determination techniques, the 
-International GNSS service includes tweleve Analysis Centers [7] and the 
+International GNSS service includes twelve Analysis Centers [7] and the 
 International ILRS Service includes seven core and a number of Associate 
-Analysis Centers [8]) 
+Analysis Centers [8]) underlines the need for high-caliber scientific teams 
+targeting this challenging technique, thus further strengthening its contribution 
+to both earth-based (e.g. the ITRF realizations) and space-based (e.g. orbits) 
+products.
+
+On the other hand, this scarcity is also a proof of concept for the challenges 
+posed in performing high quality analysis using the DORIS system. Processing 
+system observations requires expertise in various multi-disciplinary fields 
+(e.g. astrodynamics, geodesy, atmospheric physics, etc), claiming optimal 
+decisions between models and methodologies, design and implementation, in an 
+ever-upgrading field. Precise orbit determination and positioning constitutes 
+one of the most complex and demanding problems in Satellite Geodesy, one that 
+is always evolving due to its multi-disciplinary nature and the ever-growing 
+disposal of satellite missions and data.
+
+1.4 State-of-the-art & Innovation
+=================================
+
+Currently, only four such software packages exist ([6]) worldwide, but are 
+neither open source, nor free. The objective of the proposed project is to 
+design and implement an orbit determination and positioning software tool using 
+DORIS data, introducing on the way novel approaches, and validating state-of-the-art 
+methodologies. We aim at a robust methodology providing quality satellite 
+state estimates, one though that can be efficient enough to be implemented for 
+near-real time applications. Hence, algorithmic design and implementation, as 
+well as efficiency and resource awareness are all topics to be considered. 
+
+Guidelines set by the IDS act as the de-facto standard for orbit determination
+via DORIS. We will try to comply with this set of recommendations as close as 
+possible, deviating when needed to check and validate alternate or novel 
+processing approaches.
+
+[6] Using measured satellite attitude (satellite body orientation in the quaternion form and
+solar panel angles) instead of nominal attitude results in slightly better POD results
 
 Indicative fields should include:
     • Relevance with the selected Scientific Area
@@ -147,3 +180,5 @@ References
 [6] "The international DORIS service contribution to ITRF2020", G. Moreaux, F. G. Lemoine, H. Capdeville, M. Otten, P. Štěpánek, J. Saunier, P. Ferrage, Advances in Space Research, 2022
 [7] "Analysis Center Coordinator, IGS Analysis Centers", https://igs.org/acc/, Retrieved 10 October 2022.
 [8] "ILRS Analysis Centers", https://ilrs.gsfc.nasa.gov/science/analysisCenters/index.html, Retrieved 10 October 2022.
+[9] "Impact of nominal and measured satellite attitude on SLR- and DORIS-derived orbits of Jason satellites and altimetry results", S. Rudenko, J. Zeitlhöfler, M. Bloßfeld and D. Dettmering, Ocean Surface Topography Science Team Meeting (OSTST) 2019, 21-25 October 2019, Chicago, Illinois, United States of America
+[10] "DORIS results on Precise Orbit Determination and on geocenter and scale solutions from CNES/CLS IDS Analysis Center contribution to the ITRF2020", H. Capdeville, J-M. Lemoine, A. Mezerette and G. Moreaux, EGU21-5384, G2 - Reference Frames and Geodetic Observing Systems, G2.4 - Precise Orbit Determination for Geodesy and Earth Science
