@@ -320,6 +320,50 @@ vicinity of Greece will be accumulated and analyzed to estimate crustal behaviou
 from GNSS analysis (e.g. [26]). Orbital parameters will be validated using the 
 IDS published results (sp3c orbits).
 
+2.2.2 Description of each Work Package
+======================================
+
+WP Number 1, Objectives:
+  Evaluation and validation of already developed software tools by the host 
+  institution (e.g. [24] and [25]). Setting of standards, design patterns and 
+  development and algorithmic guidelines to be followed later on. Gaining a 
+  clear view on the starting ground and further development needs of the 
+  core parts of the software. Refactor existing source code to comply to the 
+  proposal's needs.
+
+WP Number 3, Objectives:
+  Upgrade the core software to meet the demands and accuracy of Precise Orbit
+  Determination and Positioning, by implementing individual satellite attitude 
+  model, design geometry and macromodels. Derive a state-of-the-art DORIS 
+  processing software suite.
+
+Description of the Work:
+  Implement space-vehicle attitude determination (either quaternion based if 
+  possible or using phase law). Implement satellite-specific geometrical design 
+  (e.g. vehicle-fixed reference frame), on-board phase center offset and 
+  macromodels. Use the the aforementioned tools to refine satellite force 
+  modeling (e.g. computation of projected areas for drag and radiation) and 
+  observation modeling (e.g.reduction of observation vectors to receiver 
+  phase center). Release software beta versions once satellite-specific modeling 
+  is through for each individual satellite.
+
+WP Number 5, Objectives:
+  Evaluation and validation of results obtained by the software developed, using 
+  products of the utmost quality. Identification of deficiencies and further fine 
+  tuning; derive proposals for further enhancements and methodology/algorithmic 
+  enhancements. Determination of mismodeling effects or non-mitigated error sources 
+  and recommend specific patterns or study areas for their curation.
+
+Description of the Work:
+  Stack position estimates derived from the processing of data performed in 
+  WP4, to get time-series for DORIS network beacons, in and/or around Greece. 
+  Analyze the time-series to derive crustal dynamics (tectonic velocity and 
+  harmonics signals if any) on each point and compare with results for GPS/GNSS 
+  colocated sites.
+  Ritrieve IDS published orbits (in Sp3c format) and compare with the estimates 
+  obtained by the processing in WP4. Compare estimated Earth Orietation parameters 
+  to the ones published by the IERS.
+
 
 References
 ==============================================================================
