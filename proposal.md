@@ -284,6 +284,42 @@ Lastly, the research team will incorporate the estimation of Earth Orientation
 parameters (Earth rotation axis pole coordinates and Length of Day) [23] 
 within the analysis process at the level of geodetic precision.
 
+2.2.1 Brief outline of the overall work plan
+============================================
+
+During the first three months (WP1), the research team will evaluate and refactor 
+current, already available software developed during the last years within the 
+host institute (e.g. [24] and [25]). This will act as a starting ground for further 
+development.
+
+In WP2, the fundamental parts of the software suite will be designed and developed; 
+all core parts (including orbit dynamics, reference frames, force modelling and 
+integration) of the analysis tools will be implemented in this nine month 
+span. Depending on the needs, new source code will be written from scratch, or 
+evaluated source code (from WP1) will be adopted and upgraded to meet state-of-the-art 
+standards.
+
+Once the core parts of the software are ready, the research team will start the 
+development of satellite-specific components, including attitude determination 
+and space vehicle macromodels, as well as refinement of the force model to take 
+into account indivudual satellite geometry (WP3). It is expected that a three-month 
+period of development will be enough for each case. 
+
+Shortly after a working version of the software for the first satellite (Jason-3), 
+has been reached, the evaluation process will take place, along with the 
+processing of older (than current), "historic" data (WP4) to obtain results for 
+orbit determination, positioning and other parameters of interest. Bug-fixes and 
+software refinements are expected to take place within this period, which will 
+last untill the end of the project.
+
+Once the bulk of the processing results from WP4 is ready, the research team 
+will move on to evaluate and validate the estimated parameters and hence the 
+overall software efficiency (WP5). Position estimates of ground stations in the 
+vicinity of Greece will be accumulated and analyzed to estimate crustal behaviour 
+(a task demanding results of utmost accuracy) and compared to times series derived 
+from GNSS analysis (e.g. [26]). Orbital parameters will be validated using the 
+IDS published results (sp3c orbits).
+
 
 References
 ==============================================================================
@@ -312,3 +348,6 @@ References
 [21] "Implementation of Gauss-Jackson Integration for Orbit Propagation", M. M. Berry and L. M. Healy, The Journal of the Astronautical Sciences, Vol. 52, No. 3, July–September 2004
 [22] "Real-time orbit determination of Low Earth orbit satellite based on RINEX/DORIS 3.0 phase data and spaceborne GPS data", C. Zhou, S. Zhong, B. Peng, J. Ou, J. Zhang, R. Chen, Advances in Space Research, Volume 66, Issue 7, 2020
 [23] "Estimation of the Length of Day (LOD) from DORIS observations", P. Štěpánek, U. Hugentobler, M. Buday, V. Filler, Advances in Space Research 62 (2018) 370–382
+[24] "Development of an in-house DORIS processing software", X. Papanikolaou, V. Zacharis, M. Tsichlaki, S. Nahmani, A.Pollet, M. Tsakiri, J. Galanis, IDS Analysis Center Workshop, Venice-Italy, 2022
+[25] "Validating DORIS meteo data", V. Zacharis, M. Tsichlaki, X. Papanikolaou, M. Tsakiri, IDS Analysis Center Workshop, Venice-Italy, 2022 
+[26] "Routine Analysis of all available GNSS Stations in Greece: Processing Scheme and Dissemination of Products and Data", X. Papanikolaou, D. Anastasiou, A. Marinou, V. Zacharis, D. Paradissis, EGU General Assembly Conference, 2015
