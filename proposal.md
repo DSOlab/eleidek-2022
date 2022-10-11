@@ -215,21 +215,57 @@ Laboratory (NASA/JPL). Cooperation and collaboration with such renowned
 institutions will hugely benefit both the personnel involved (research team) and 
 the NTUA/DSO, gaining unprecedented expertise on the subject.
 
-
-Indicative fields should include:
-    • Relevance with the selected Scientific Area
-    • Proposal objectives and necessity/challenges
-    • State-of-the-art & Innovation
-    • Scientific and/or social impact 
-
 2 Methodology and Implementation
 ==============================================================================
-Indicative fields should include:
-    • Research Methodology
-    • Work Plan
-    • Research Team
 
 2.1 Research Methodology
+========================
+
+Core software development will be performed using the C++ programming language, 
+taking advantage of its speed and versatility. Various minor, peripheral parts 
+of the package will be developed using Python, allowing development speed and 
+ease of use (for end users).
+
+As a first step to tackling the challenges posed in the proposal, the research 
+team will first evaluate and refactor current software tools already designed 
+and developed throughout the previous years (e.g. [18]) and investigate current 
+state-of-the-art models and algorithms to be implemented and incorporated in the 
+software.
+
+Throughout the first year, the research team will design and develop software 
+to handle the complicated modeling of orbital mechanics for Low Earth Orbiting 
+(LEO) satellites. Fundamental forces acting on earth orbiting bodies will be 
+treated using robust, elaborate, state-of-the-art models, describing and 
+compensating for their effects (e.g. atmospheric drag, solar radiation pressure, 
+etc).
+
+Reference frames and time systems (scales), play a major role in the modeling of 
+orbital dynamics. Special care will be taken, to implement the most recent 
+earth attitude models, as described by the International Earth Rotation Service 
+(IERS Standards 2010, [13]). Displacement of reference points (on the Earth's 
+crust) and loading effects (ocean, sold-earth, atmospheric) will be curated using 
+the most recent standards.
+
+Integrators are of fundamental importance in orbit determination, since they 
+allow the (numerical) solution of the equations of motion, accounting for 
+perturbation effects. This system of Ordinary Differential Equations, called 
+the variational equations, plays a crucial role in both the quality and the 
+efficiency of the orbit determination process. We will focus on designing and 
+implementing a multistep integrator, using the Adams-Bashforth-Moulton, 
+Predict–Evaluate–Correct–Evaluate (PECE) algorithm.
+
+DORIS system observables (observation equations) will be formulated using the 
+DORIS RINEX format/data files, and following the rigorous approach described in 
+[19]. Novel approaches will be introduced here, estimating the relative frequency 
+offsets using second degree polynomials with process noise.
+
+Once these components are in place and tested, the research team will implement 
+satellite-specific models and parts of the software for the targeted satellites. 
+Attitude determination will be performed using measured data via the quaternion 
+approach when available (at least for Jason-3). If no such data is published, 
+the so called satellite-specific "attitude law" will be implemented to model 
+rigid body rotations. Satellite-specific macromodels ([20]) will be used to 
+compute surface area and on-board phase center eccentricities.
 
 References
 ==============================================================================
@@ -252,3 +288,6 @@ References
 [15] "FES2014 global ocean tide atlas: design and performance", F. H. Lyard, D. J. Allain, M. Cancet, L. Carrère, and N. Picot, Ocean Sci., 17, 615–649, https://doi.org/10.5194/os-17-615-2021, 2021
 [16] "More constexpr for <cmath> and <complex>", E. J. Rosten,  O. J. Rosten, Programming Language C++, Library Working Group, 2019 (available at https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1383r0.pdf)
 [17] Docker, https://www.docker.com/
+[18] "Designing a DORIS processing software for orbit determination and estimation of geodetic parameters", X. Papanikolaou, M. Tsakiri, S. Nahmani and A. Pollet, Reference Frames for Applications in Geosciences (REFAG), Thessaloniki-Greece, 2022
+[19] "Precise orbit determination and station position estimation using DORIS RINEX data", J.-M. Lemoine, H. Capdeville, L. Soudarin, Advances in Space Research 58 (2016) 2677–2690
+[20] "DORIS satellites models implemented in POE processing", L. Cerri, A. Couhert, P. Ferrage, CNES & IDS, 2022
