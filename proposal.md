@@ -145,13 +145,76 @@ state estimates, one though that can be efficient enough to be implemented for
 near-real time applications. Hence, algorithmic design and implementation, as 
 well as efficiency and resource awareness are all topics to be considered. 
 
+We expect that the outcome of the project will be an innovative, state-of-the-art 
+software package, open and free to the scientific community.
+
 Guidelines set by the IDS act as the de-facto standard for orbit determination
 via DORIS. We will try to comply with this set of recommendations as close as 
 possible, deviating when needed to check and validate alternate or novel 
-processing approaches.
+processing approaches. Specific points of novelty, will be:
 
-[6] Using measured satellite attitude (satellite body orientation in the quaternion form and
-solar panel angles) instead of nominal attitude results in slightly better POD results
+  * use of RINEX-only observation files ([12]) (as opposed to the widely used, 
+    older doris2.2 format). Allow parsing of near real-time RINEX data parsing.
+
+  * use of measured satellite attitude (quaternion-based) determination (as 
+    opposed to the common attitude-law approach). According to [9], using 
+    measured satellite attitude (satellite body orientation in the quaternion 
+    form and solar panel angles) instead of nominal attitude results in 
+    slightly better Precise Orbit Determination results
+
+  * full compliance with the IERS2010 ([13]) models for transformation between 
+    celestial and terrestrial reference frames, including the 2006/2000A 
+    precession/nutation models and new mean pole model ([11])
+
+  * use of the latest EIGEN time-variable gravity (TVG) models RL04 ([14]) and 
+    respective dealiasing products
+
+  * use of the newest FES2014/FES2014b ([15]) ocean tide models
+
+  * use modern design patterns and implementation details, including template 
+    metaprogramming and compile-time mathematical functions (e.g. [16]). Note 
+    that most relevant software packages have to be complant with legacy code, 
+    written deceads ago, thus prohibiting use of modern programming approaches
+
+  * use of a modern, widely used and user-friendly distribution and dissemination 
+    approach. Enable software distribution via Docker ([17]), instead of the 
+    cumbersome approach of source-code release and building.
+
+1.5 Scientific and social impact
+================================
+
+We expect that the results of this proposal will have a strong effect, first 
+and foremost in the scientific community.
+
+The results and outcomes of the project will enhance our knowledge on Satellite 
+Geodesy, Earth and Atmospheric Physics and Orbit Determination/Astrodynamics. 
+Applying state-of-the-art methodologies and novel approaches will greatly enhance 
+the collective knowledge and provide crucial feedback and conclusions. It will 
+reveal drawbacks and limitations and act as a validation platform for the most 
+modern modeling approaches and theories.
+
+Additionally, the community will be provided with a state-of-the-art, free and 
+open software, a fact expected to drive interest and attention to one of the 
+most prominent and robust space-geodetic techniques. Scarcity of such a tool is 
+on of the basic reasons why the system has a more limited user community (as 
+e.g. compared to GPS/GNSS) even though it's application range and accuracy is 
+on the same level.
+
+Via the software tool that will be developed, DSO will be able to contribute 
+to the IDS, thus in turn strengthening the Service's contribution to a series 
+of products vital to the scientific community (e.g. realization of ITRF, Earth 
+attitude, etc). IDS products, as all collective space-geodetic services e.g. 
+the IGS and ILRS, are based on an accumulation of individual Analysis Centers 
+results; hence the Service is in search of top-quality scientific contributors.
+
+DSO itself will also largely benefit from contributing to such a high-caliber 
+Service. IDS is a collective organization of a series of elite institutions, 
+such as the National Centre for Space Studies (CNES), Goddard Space Flight 
+Center (NASA/GSFC), European Space Operations Centre (ESA/ESOC) and Jet Propulsion 
+Laboratory (NASA/JPL). Cooperation and collaboration with such renowned 
+institutions will hugely benefit both the personnel involved (research team) and 
+the NTUA/DSO, gaining unprecedented expertise on the subject.
+
 
 Indicative fields should include:
     • Relevance with the selected Scientific Area
@@ -183,3 +246,9 @@ References
 [9] "Impact of nominal and measured satellite attitude on SLR- and DORIS-derived orbits of Jason satellites and altimetry results", S. Rudenko, J. Zeitlhöfler, M. Bloßfeld and D. Dettmering, Ocean Surface Topography Science Team Meeting (OSTST) 2019, 21-25 October 2019, Chicago, Illinois, United States of America
 [10] "DORIS results on Precise Orbit Determination and on geocenter and scale solutions from CNES/CLS IDS Analysis Center contribution to the ITRF2020", H. Capdeville, J-M. Lemoine, A. Mezerette and G. Moreaux, EGU21-5384, G2 - Reference Frames and Geodetic Observing Systems, G2.4 - Precise Orbit Determination for Geodesy and Earth Science
 [11] "IDS Recommendations and suggestions for ITRF 2020 reprocessing", International DORIS Service, https://ids-doris.org/images/IDS_RecommendationsITRF2020_04.02.2020.pdf,  Retrieved 10 October 2022.
+[12] "RINEX DORIS 3.0 (Issue 1.7)", CNES & IDS, ftp://ftp.ids-doris.org/pub/ids/data/RINEX_DORIS.pdf, Retrieved 10 October 2022.
+[13] "IERS Conventions (2010)", G. Petit and B. Luzum (eds.), International Earth Rotation and Reference Systems Service (IERS), IERS Technical Note No. 36, 2010 
+[14] "CNES/GRGS RL04 Earth gravity field models, from GRACE and SLR data. GFZ Data Services", Lemoine J-M.l, Biancale R., Reinquin F., Bourgogne S., Gégout P. (2019), https://doi.org/10.5880/ICGEM.2019.010
+[15] "FES2014 global ocean tide atlas: design and performance", F. H. Lyard, D. J. Allain, M. Cancet, L. Carrère, and N. Picot, Ocean Sci., 17, 615–649, https://doi.org/10.5194/os-17-615-2021, 2021
+[16] "More constexpr for <cmath> and <complex>", E. J. Rosten,  O. J. Rosten, Programming Language C++, Library Working Group, 2019 (available at https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1383r0.pdf)
+[17] Docker, https://www.docker.com/
