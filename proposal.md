@@ -252,7 +252,7 @@ perturbation effects. This system of Ordinary Differential Equations, called
 the variational equations, plays a crucial role in both the quality and the 
 efficiency of the orbit determination process. We will focus on designing and 
 implementing a multistep integrator, using the Adams-Bashforth-Moulton, 
-Predict–Evaluate–Correct–Evaluate (PECE) algorithm.
+Predict–Evaluate–Correct–Evaluate (PECE) algorithm (e.g. [21]).
 
 DORIS system observables (observation equations) will be formulated using the 
 DORIS RINEX format/data files, and following the rigorous approach described in 
@@ -266,6 +266,24 @@ approach when available (at least for Jason-3). If no such data is published,
 the so called satellite-specific "attitude law" will be implemented to model 
 rigid body rotations. Satellite-specific macromodels ([20]) will be used to 
 compute surface area and on-board phase center eccentricities.
+
+Using the above satellite-specific approach, part of the forces acting on the 
+space vehicle will be refined, using an elaborate modeling of the satellite 
+geometry, attitude and design characteristics. Most notably, drag forces and 
+solar radiation pressure effects will be modeled using this satellite-specific 
+approach.
+
+Parameter estimation will be performed via the (Extended) Kalman Filter algorithm 
+[21]. All parameters describing the satellite state, the orbit and force model 
+dynamics (e.g. atmospheric drag and solar radiation pressure coefficients) and 
+beacon-specific frequency/clock parameters will be estimated, using a sophisticated 
+stochastic approach. Model and observation noise characteristics and their 
+impact on the methodology and respective results will be thoroughly tested.
+
+Lastly, the research team will incorporate the estimation of Earth Orientation 
+parameters (Earth rotation axis pole coordinates and Length of Day) [23] 
+within the analysis process at the level of geodetic precision.
+
 
 References
 ==============================================================================
@@ -291,3 +309,6 @@ References
 [18] "Designing a DORIS processing software for orbit determination and estimation of geodetic parameters", X. Papanikolaou, M. Tsakiri, S. Nahmani and A. Pollet, Reference Frames for Applications in Geosciences (REFAG), Thessaloniki-Greece, 2022
 [19] "Precise orbit determination and station position estimation using DORIS RINEX data", J.-M. Lemoine, H. Capdeville, L. Soudarin, Advances in Space Research 58 (2016) 2677–2690
 [20] "DORIS satellites models implemented in POE processing", L. Cerri, A. Couhert, P. Ferrage, CNES & IDS, 2022
+[21] "Implementation of Gauss-Jackson Integration for Orbit Propagation", M. M. Berry and L. M. Healy, The Journal of the Astronautical Sciences, Vol. 52, No. 3, July–September 2004
+[22] "Real-time orbit determination of Low Earth orbit satellite based on RINEX/DORIS 3.0 phase data and spaceborne GPS data", C. Zhou, S. Zhong, B. Peng, J. Ou, J. Zhang, R. Chen, Advances in Space Research, Volume 66, Issue 7, 2020
+[23] "Estimation of the Length of Day (LOD) from DORIS observations", P. Štěpánek, U. Hugentobler, M. Buday, V. Filler, Advances in Space Research 62 (2018) 370–382
