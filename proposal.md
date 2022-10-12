@@ -40,6 +40,13 @@ space-geodetic techniques demanding the utmost precision.
 1.2 Relevance with the selected Scientific Area
 ===============================================
 
+Targeting precise orbit determination and positioning, the proposal is expected 
+to have an effect on the scientific and engineering community. Numerous 
+applications and the (targeted) satellite missions themselves, rely on accurate 
+satellite positioning to enable quality analysis of their observations (e.g. 
+for altimetry). Hence, the proposed work constitutes a prerequisite for a series 
+ of engineering applications that rely on the targeted missions.
+
 1.3 Proposal objectives and necessity/challenges
 ================================================
 
